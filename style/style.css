@@ -99,7 +99,7 @@ a:hover {
 
 #intro-section {
 	margin:30px 30px 0 30px;
-	background: #8e8e87 url('../img/achtergrond-try.png');
+	background: #8e8e87 url('../img/heading.png');
 	background-size:cover;
 	height:100vh;
 
@@ -133,7 +133,8 @@ a:hover {
 
 #background1{
 	margin:0 30px 0 30px;
-	background: url('../img/middlebackground.jpg');
+	background: url('../img/members.jpg');
+	background-size:100vw;
 	height:500px;
 	z-index:2;
 }
@@ -175,10 +176,23 @@ a:hover {
 
 #background2{
 	margin:0 30px 0 30px;
-	background: url('../img/lowerbackground.jpg');
-	background-size:100%;
+	background: url('../img/calendar.jpg');
+	background-size:100vw;
 	height:500px;
 	background-repeat: no-repeat;
+}
+
+#background3{
+	margin:0 30px 0 30px;
+	background: url('../img/media.jpg');
+	background-size:100vw;
+	height:500px;
+	background-repeat: no-repeat;
+}
+
+#media-section{
+	padding-top:30px;
+	height:100vh;
 }
 
 #contact-section{
@@ -251,8 +265,10 @@ a:hover {
 
 #outro-section{
 	margin:0 30px 30px 30px;
-	background:url('../img/lastbackground.jpg');
-	height:350px;
+	background:url('../img/footer.jpg') no-repeat;
+	background-size:100vw;
+	background-position-y:40%;
+	height:100vh;
 }
 
 /*menu*/
