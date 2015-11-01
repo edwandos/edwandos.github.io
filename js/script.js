@@ -1,5 +1,6 @@
 
 $(window).ready(function(){
+
 	
 	if(!$("html").hasClass("touch")){
 	    /* background fix */
@@ -79,7 +80,7 @@ $(window).ready(function(){
     
     /*google calendar event reader */
     
-    jQuery(function ($) {
+    $(function ($) {
        $('#events').gCalReader({
          calendarId:'e5hqsplvit187tbt2eo6522768@group.calendar.google.com', 
          apiKey:'AIzaSyAVhU0GdCZQidylxz7whIln82rWtZ4cIDQ',
@@ -88,5 +89,4 @@ $(window).ready(function(){
          sortDescending: false
         });
 	 });
-    
  });

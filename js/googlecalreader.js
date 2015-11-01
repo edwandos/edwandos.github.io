@@ -81,9 +81,18 @@
 						$($div).append('<li>' + s + '</li>');
 					}
         });
+        
         /*oude optredens in array checken en onderaan tonen*/
         if(oldEventDates.length > 0){
+        /*volgorde van events omkeren voor ordering*/
+        		/*oldEventDates.sort();*/
+        	oldEventDates.reverse();
+        	var maxCounter = 0;
+        	
         	$.each(oldEventDates, function(e, item) {
+        		
+        		//aantal oude evenementen bijhouden, als de teller boven 5 gaat moeten de li elementen een hidden class krijgen
+        		maxCounter++;
         		/*enkel de eerste keer de titel toevoegen */
 				if (e == 0){
 					$($div).append('<div class="title">Previous Shows<br/><br/></div>');
@@ -99,32 +108,44 @@
 						if(description.indexOf('http') != -1){
 							/* rond de http tag <a> element zetten */
 							var parts = description.split('http');
-							s = '<div class="eventtitle"><a href=http' + parts[1] + ' target="_blank">'+ summary +'</a></div>';
+							s = '<div class="eventtitle previous"><a href=http' + parts[1] + ' target="_blank">'+ summary +'</a></div>';
 						}
-						else s ='<div class="eventtitle">'+ summary +'</div>';
+						else s ='<div class="eventtitle previous">'+ summary +'</div>';
 					}
-					else s ='<div class="eventtitle">'+ summary +'</div>';
+					else s ='<div class="eventtitle previous">'+ summary +'</div>';
 					
+					/* s +='<div class="eventdate"> When: ' + eventDate +'</div>'; */
 					
-					
-					s +='<div class="eventdate"> When: ' + eventDate +'</div>';
-					
-					if(location) {
+					/*
+if(location) {
 						s +='<div class="location">Where: '+ location +'</div>';
 					}
 					
 					if(description) { 
 						if(description.indexOf('http') != -1){
 							/* checken als er http instaat --> link niet tonen  */
-							var parts = description.split('http');
-							if(parts.length = 1) s += '<div class="description">' + parts[0] + '</div>';
+							/* var parts = description.split('http'); */
+							/*
+if(parts.length = 1) s += '<div class="description">' + parts[0] + '</div>';
 						}
+*/
 						/* geen http -> zowiezo tonen */
-						else s += '<div class="description">' + description + '</div>';
-					}
+					/*
+	else s += '<div class="description">' + description + '</div>';
+					}*/
+
+
 					
-					s +='<div>&nbsp;</div>';
-					$($div).append('<li>' + s + '</li>');
+					/* s +='<div>&nbsp;</div>'; */
+					
+					if(maxCounter > '5'){
+						if(maxCounter == '6'){
+							$($div).append('<div>&nbsp;</div><div id="toggle_container"><div id="toggle_left"><hr class="toggle_line"></div><div id="toggle_button"><i class="fa fa-chevron-down fa-2x"></i></div><div id="toggle_right"><hr class="toggle_line"></div></div>');
+						}
+						$($div).append('<li class="toggle_event">' + s + '</li>');
+					}
+					else $($div).append('<li>' + s + '</li>');
+					
 
 			});
 		}
