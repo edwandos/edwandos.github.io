@@ -8,7 +8,7 @@
         apiKey: 'Public_API_Key',
         dateFormat: 'LongDate+shortTime',
         errorMsg: 'No events in calendar',
-        maxEvents: 50,
+        maxEvents: 100,
         futureEventsOnly: true,
         sortDescending: true
       },
@@ -29,7 +29,7 @@
         if(defaults.sortDescending){
           data.items = data.items.reverse();
         }
-        data.items = data.items.slice(0, defaults.maxEvents);
+        data.items = data.items.slice(0, defaults.maxEvents + 1);
         
         /*oude shows array declareren*/
         var oldEventDates = [];
