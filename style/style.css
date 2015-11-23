@@ -463,6 +463,10 @@ nav{
 	text-decoration:underline;
 }
 
+#trombone{
+	display:inline-flex;
+}
+
 .identity{
 	display: inline-block;
     height: 100%;
@@ -475,6 +479,13 @@ nav{
 	width:32%;
 	float:left;
 	/*padding-top:15px;*/
+}
+
+#tobias .identity_image{
+	position:relative;
+	left: -10px;
+    top: -5px;
+    width: 36%;
 }
 
 #edward .identity_image{
