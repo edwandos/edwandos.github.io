@@ -251,21 +251,7 @@ They are already grandma's favourite swing band. Soon yours as well?
 			//show more_button functionality
 			 $('#toggle_button').css('cursor','pointer');
 			 $('#toggle_container').css('padding-bottom','20px');
-			 
-			 $('#toggle_button').click(function(){
-			
-			 	if ($('.toggle_event').css('display') != 'block'){
-			 		$('#toggle_container').css('padding-bottom','10px');
-				 	$('.toggle_event').css('display','block');
-				 	$('#toggle_button').html('<i class="fa fa-chevron-up fa-2x"></i>');
-			 	}
-				else{
-				$('#toggle_container').css('padding-bottom','20px');
-					$('.toggle_event').css('display','none');
-					$('#toggle_button').html('<i class="fa fa-chevron-down fa-2x"></i>');
-				}
-				 
-			 });
+
 			 
 			 $("#gallery").justifiedGallery({
 				 rowHeight : 120,
