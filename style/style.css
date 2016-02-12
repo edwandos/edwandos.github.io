@@ -138,6 +138,11 @@ a:focus{
 
 }
 
+
+#trombone{
+	display:inline-flex;
+}
+
 #band-section{
 	position:relative;
 	overflow:hidden;
@@ -381,7 +386,7 @@ display:inline;
 	padding-right:30px;
 	width:100vw;
 	position:relative;
-
+	top:40px;
 }
 
 nav{
@@ -420,14 +425,23 @@ nav{
 .navigation{
 	z-index:300;
 	position: fixed;
-	max-width:100%;
+	width:100%;
+	top:-60px;
 	height:100px;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    opacity: 0;
     background:#fff;
-      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
-  filter: alpha(opacity=100);
-  opacity: 1;
 }
 
+
+
+.navigation.active{
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  filter: alpha(opacity=100);
+  opacity: 1;
+  top:-40px;
+}
 
 /* souncloud + image gallery positioning */
 #mediaContainer{
@@ -454,10 +468,6 @@ nav{
 	text-decoration:underline;
 }
 
-#trombone{
-	display:inline-flex;
-}
-
 .identity{
 	display: inline-block;
     height: 100%;
@@ -470,13 +480,6 @@ nav{
 	width:32%;
 	float:left;
 	/*padding-top:15px;*/
-}
-
-#tobias .identity_image{
-	position:relative;
-	left: -10px;
-    top: -5px;
-    width: 36%;
 }
 
 #edward .identity_image{

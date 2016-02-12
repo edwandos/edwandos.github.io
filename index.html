@@ -82,7 +82,8 @@ They are already grandma's favourite swing band. Soon yours as well?
 						<li><a class="inline cboxElement" href="#heleen">Heleen Andriessens: Piano</a></li>
 						<li><a class="inline cboxElement" href="#edward">Edward Demoor: Double Bass</a></li>
 						<li><a class="inline cboxElement" href="#jan">Jan Van Steenbrugge: Drums</a></li>
-						<li id="trombone"><a class="inline cboxElement" href="#jonathan">Jonathan Ackaert</a> / <a class="inline cboxElement" href="#tobias">Tobias Storme</a>: Trombone</li>
+						<li id="trombone"><a class="inline cboxElement" href="#jonathan">Jonathan Ackaert</a>
+						 / <a class="inline cboxElement" href="#tobias">Tobias Storme</a>: Trombone</li>
 						<li><a class="inline cboxElement" href="#ruben">Ruben Van Bost: Tenor Saxophone</a></li>
 						<li><a class="inline cboxElement" href="#simon">Simon Lagrange: Trumpet</a></li>
 					</ul>
@@ -294,6 +295,18 @@ They are already grandma's favourite swing band. Soon yours as well?
 				innerHeight:"370px"
 			})
 		});
+
+		/*google calendar event reader */
+		    
+		    $(function ($) {
+		       $('#events').gCalReader({
+		         calendarId:'e5hqsplvit187tbt2eo6522768@group.calendar.google.com', 
+		         apiKey:'AIzaSyAVhU0GdCZQidylxz7whIln82rWtZ4cIDQ',
+		         maxEvents:50,
+		         futureEventsOnly: false,
+		         sortDescending: false
+		        });
+			 });
 	
 				
 		</script>

@@ -26,6 +26,7 @@
       url: feedUrl,
       dataType: 'json',
       success: function(data) {
+
         if(defaults.sortDescending){
           data.items = data.items.reverse();
         }
@@ -35,6 +36,7 @@
         var oldEventDates = [];
 
         $.each(data.items, function(e, item) {
+
           var eventdate = item.start.dateTime || item.start.date ||'';
           var summary = item.summary || '';
 					var description = item.description;
@@ -138,13 +140,31 @@ if(parts.length = 1) s += '<div class="description">' + parts[0] + '</div>';
 					
 					/* s +='<div>&nbsp;</div>'; */
 					
-					if(maxCounter > '5'){
-						if(maxCounter == '6'){
-							$($div).append('<div>&nbsp;</div><div id="toggle_container"><div id="toggle_left"><hr class="toggle_line"></div><div id="toggle_button"><i class="fa fa-chevron-down fa-2x"></i></div><div id="toggle_right"><hr class="toggle_line"></div></div>');
-						}
-						$($div).append('<li class="toggle_event">' + s + '</li>');
-					}
-					else $($div).append('<li>' + s + '</li>');
+  					if(maxCounter > '5'){
+  						if(maxCounter == '6'){
+                if($(window).width() > 900){
+  							 $($div).append('<div>&nbsp;</div><div id="toggle_container"><div id="toggle_left"><hr class="toggle_line"></div><div id="toggle_button"><i class="fa fa-chevron-down fa-2x"></i></div><div id="toggle_right"><hr class="toggle_line"></div></div>');
+
+                 $('#toggle_button').css('cursor','pointer').click(function(){
+      
+                    if ($('.toggle_event').css('display') != 'block'){
+                      $('#toggle_container').css('padding-bottom','10px');
+                      $('.toggle_event').css('display','block');
+                      $('#toggle_button').html('<i class="fa fa-chevron-up fa-2x"></i>');
+                    }
+                    else{
+                    $('#toggle_container').css('padding-bottom','20px');
+                      $('.toggle_event').css('display','none');
+                      $('#toggle_button').html('<i class="fa fa-chevron-down fa-2x"></i>');
+                    }
+                     
+                   });
+  						  }
+              }
+  						$($div).append('<li class="toggle_event">' + s + '</li>');
+  					}
+  					else $($div).append('<li>' + s + '</li>');
+          
 					
 
 			});
