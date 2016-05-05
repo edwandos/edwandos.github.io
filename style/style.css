@@ -573,13 +573,13 @@ nav{
 #videos{
 	display: block;
     float: left;
-    width: 50%;
+    width: 40%;
     position: relative;
     top: 20px;
 }
 
 #videos a{
-	display:flex;
+	display:inline-block;
 }
 
 .thanks{
