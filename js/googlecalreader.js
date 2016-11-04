@@ -113,9 +113,9 @@
 							var parts = description.split('http');
 							s = '<div class="eventtitle previous"><a href=http' + parts[1] + ' target="_blank">'+ summary + ' - ' + eventDate +'</a></div>';
 						}
-						else s ='<div class="eventtitle previous">'+ summary +'</div>';
+						else s ='<div class="eventtitle previous">'+ summary + ' - ' + eventDate  +'</div>';
 					}
-					else s ='<div class="eventtitle previous">'+ summary +'</div>';
+					else s ='<div class="eventtitle previous">'+ summary + ' - ' + eventDate  +'</div>';
 					
 					/* s +='<div class="eventdate"> When: ' + eventDate +'</div>'; */
 					
