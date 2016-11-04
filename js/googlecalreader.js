@@ -7,6 +7,7 @@
         calendarId: 'e5hqsplvit187tbt2eo6522768@group.calendar.google.com',
         apiKey: 'Public_API_Key',
         dateFormat: 'LongDate+shortTime',
+        dateFormatSimple: 'ShortDate',
         errorMsg: 'No events in calendar',
         maxEvents: 100,
         futureEventsOnly: true,
@@ -104,13 +105,13 @@
 				var summary = item.summary || '';
 				var description = item.description;
 				var location = item.location;
-				var eventDate = formatDate(eventdate, defaults.dateFormat.trim());
+				var eventDate = formatDate(eventdate, defaults.dateFormatSimple.trim());
 				
 				if(description){
 						if(description.indexOf('http') != -1){
 							/* rond de http tag <a> element zetten */
 							var parts = description.split('http');
-							s = '<div class="eventtitle previous"><a href=http' + parts[1] + ' target="_blank">'+ summary +'</a></div>';
+							s = '<div class="eventtitle previous"><a href=http' + parts[1] + ' target="_blank">'+ summary + ' - ' + eventDate +'</a></div>';
 						}
 						else s ='<div class="eventtitle previous">'+ summary +'</div>';
 					}
@@ -233,7 +234,8 @@ if(parts.length = 1) s += '<div class="description">' + parts[0] + '</div>';
           fd = time;
           break;
         case 'ShortDate':
-          fd = month + '/' + dayNum + '/' + year;
+          fd = dayNum + ' ' + calendar.months.full[
+            month] + ' ' + year;
           break;
         case 'LongDate':
           fd = calendar.days.full[d.getDay()] + ' ' + calendar.months.full[
